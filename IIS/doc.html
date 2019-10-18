@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Projekt IIS</title>
+    <style type="text/css">
+    	table { border-collapse: collapse; }
+    	td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    	dt { font-weight: bold; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+
+<!-- Zkontrolujte prosím nastavení kódování v hlavičce dokumentu 
+     podle použitého editoru -->
+
+<h1>Nemocnice č. 28</h1> 
+
+<dl>
+	<dt>Autoři</dt>
+	<dd>Kateřina Šmajzrová 
+	    <a href="mailto:xsmajz00@stud.fit.vutbr.cz">xsmajz00@stud.fit.vutbr.cz</a> -
+		vzhled, databáze, php skripty
+	</dd>
+	<dd>Nguyen Hoang Duong
+	    <a href="mailto:xnguye14@stud.fit.vutbr.cz">xnguye14@stud.fit.vutbr.cz</a> - 
+		php skripty, databáze
+	</dd>
+	<dt>URL aplikace</dt>
+        <dd><a href="href="http://fit.miramal.com/IIS/">http://fit.miramal.com/IIS/</a></dd>
+</dl>
+
+<h2>Uživatelé systému pro testování</h2>
+<p>Uveďte prosím existující zástupce <strong>všech rolí uživatelů</strong>.</p>
+<table>
+<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+ <tr><td>Novakova</td><td>1234</td><td>Ředitel</td></tr>
+<tr><td>Novy</td><td>1234</td><td>Doktor</td></tr>
+<tr><td>Vesela</td><td>1234</td><td>Sestra</td></tr>
+<tr><td>Dvorak</td><td>1234</td><td>Lékárník</td></tr>
+</table>
+
+<h2>Implementace</h2>
+<p>Každý uživatel má přístupné tlačítko Upravit profil, kde si může změnit některé osobní údaje a změnit heslo. Odhlásit se je možné přes tlačítko Odhlásit se případně dojde k automatickému odhlášení po určité době nečinnosti.
+<p> Došlo také k pár odchylkám, co se týče Use-Case diagramu navrhnutému v předmětu IDS, ředitel může kromě mazání účtů zaměstanců také přidávat či odebírat oddělení nebo si nechat vypsat vyšetření, které proběhly v nemocnici.
+<p>   U doktora nám přišlo zbytečné dávat přidávat pacienta, čímž se nemusí zdržovat, protože to udělá sestra a pouze si nechá vypsat údaje o něm, k lékům má omezenější přístup, ale může si všechny léky projít.
+<p>  U lékárníka přibyla položka vydat lék, což určitě je v praxi potřeba.
+<p>Zdravotní sestra také může zadat vyšetření a také zadat pacienta do systému, případně upravit jeho osobní informace pro ušetření času doktora.
+
+<p>Úvodní stránku načteme na index.php
+<p>Ve složce lib najdeme:
+<ul>
+<li>db-connect.php -  třída pro připojení k databázi a s pomocnými funkcemi, které urychlí zadávání dotazů při psaní stránek</li>
+<li>nemocnice.css - soubor se styly, který definuje jak budou stránky vypadat</li>
+</ul>
+<p>Hlavní soubory
+<ul>
+<li>reditel.php - administrátorské rozhraní pro ředitele nemocnice</li>
+<li>doktor.php - rozhraní pro doktory</li>
+<li>sestra.php - rozhraní pro zdravotní sestry</li>
+<li>lekarnik.php - administrátorské rozhraní pro lékárníky</li>
+</ul>
+<p>Pomocné soubory
+<ul>
+<li>login.php - kotrola správného přihlášení</li>
+<li>logout.php - odhlášení</li>
+<li>search.php - slouží k úpravě osob</li>
+<li>edit.php - slouží k uprávě profilu</li>
+<li>uvod.php - obsahuje html hlavičku včetně importu některých javascriptů a kaskádových stylů</li>
+<li>uvod2.php - obsahuje alternativní html hlavičku pro vyskakovací okna</li>
+<li>zaver.php - uzavírá html soubor</li>
+<li>db.sql - soubor pro vytvoření databáze a naplnění jí daty</li>
+</ul>
+
+
+<h2>Instalace</h2>
+<p>Nejprve je potřeba zkopírovat všechny soubory na server, poté naimportovat sql soubor do MySQL databáze.
+    <h2>Softwarové požadavky</h2>
+    <ul><li>MySQL</li><li>PHP 5.6.</li></ul>
+
+</body>
+</html>
