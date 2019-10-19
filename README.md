@@ -12,7 +12,7 @@ Contains 6 small projects written in C as the practices with this language.
 
 ## IIS
 
-Simple information system of the hospital. Spaghetti code due to lack of time.
+Simple information system for hospital. Spaghetti code due to lack of time.
 
 ## IPP
 
