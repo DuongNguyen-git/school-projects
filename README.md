@@ -8,7 +8,7 @@ Transformation web application to vector graphics (Java).
 
 ## IAL
 
-This repository contains 6 small projects written in C as the practices with this language.
+Contains 6 small projects written in C as the practices with this language.
 
 ## IIS
 
